@@ -1,0 +1,23 @@
+{
+  "name": "hmpu-plugin",
+  "version": "1.0.0",
+  "description": "This is the repository for hosting the required assets for the Happy-MPU reviews",
+  "main": "hmpu-plugin.js",
+  "scripts": {
+    "build": "minify src/hmpu-plugin.js > dist/hmpu-plugin.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamerxkilinc/hmpu-plugin.git"
+  },
+  "author": "Tamer Kilinc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamerxkilinc/hmpu-plugin/issues"
+  },
+  "homepage": "https://github.com/tamerxkilinc/hmpu-plugin#readme",
+  "dependencies": {
+    "minify": "^9.2.0",
+    "prettier": "^2.8.4"
+  }
+}
