@@ -11,7 +11,7 @@ Add one of the snippets below to your website to display the iframe. Replace `{Y
 
 Include this to the end of your HTML body.
 ```html
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tamerxkilinc/gex-plugin@main/dist/hmpu-plugin.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tamerxkilinc/hmpu-plugin@main/dist/hmpu-plugin.min.js"></script>
 ```
 
 Put this where you want to display the iframe. Replace YOUR_IFRAME_URL with the URL of the iframe.
