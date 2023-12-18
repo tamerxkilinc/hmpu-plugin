@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function renderConsultantTags() {
   const consultantTagElements = document.querySelectorAll(
-    ".hmpu-consultant-tag"
+    ".hmpu-consultant-tag-container"
   );
 
   if (!consultantTagElements) {
@@ -40,12 +40,12 @@ function renderConsultantTags() {
 
       let tagsHTML = "";
       tags.forEach((tag) => {
-        tagsHTML += `<span class="hmpu-consultant-tag">${tag}</span>`;
+        tagsHTML += `<span class="hmpu-consultant-tag">${tag}<span class="Badge-Count">4x</span></span>`;
       });
 
       tagElement.innerHTML = `
         <div class="hmpu-consultant-tag-container">
-        ${tagsHTML}
+            ${tagsHTML}
         </div>
         `;
     });

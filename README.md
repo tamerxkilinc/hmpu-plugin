@@ -33,6 +33,6 @@ Add one of the snippets below to your website to display the tags. Replace `{CON
 
 #### Embedding
 ```html
-    <div class="hmpu-consultant-tag" data-consultant-id="{CONSULTANT_ID}"></div>
+    <div class="hmpu-consultant-tag-container" data-consultant-id="{CONSULTANT_ID}"></div>
 ```
 Put this where you want to display the consultant's tags.
