@@ -40,7 +40,7 @@ function renderConsultantTags() {
 
       let tagsHTML = "";
       tags.forEach((tag) => {
-        tagsHTML += `<span class="hmpu-consultant-tag">${tag}<span class="Badge-Count">4x</span></span>`;
+        tagsHTML += `<span class="hmpu-consultant-tag">${tag.tag}<span class="Badge-Count">${tag.count}</span></span>`;
       });
 
       tagElement.innerHTML = `
