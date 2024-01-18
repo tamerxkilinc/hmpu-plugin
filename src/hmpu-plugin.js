@@ -1,7 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
   hmpuIframeSettings();
   renderConsultantTags();
+  inquiryModalPageURLSettings();
+  inquiryModalActionButtonSettings();
 });
+
+function inquiryModalPageURLSettings() {
+  const formInputHiddenElement = document.getElementById("hmpu_pageurl");
+
+  if (!formInputHiddenElement) {
+    console.warn(
+      "hmpu-Plugin Error: Could not find the form input. Please make sure the form input is set and has the correct ID."
+    );
+    return;
+  }
+
+  formInputHiddenElement.value = window.location.href;
+
+  const headerCTAButton = document.getElementById("hmpu_header_cta");
+
+  if (!headerCTAButton) {
+    console.log("hmpu-Plugin Info: No header CTA button set.");
+    return;
+  }
+
+  headerCTAButton.addEventListener("click", function () {
+    formInputHiddenElement.value = window.location.href;
+  });
+}
+
+function inquiryModalActionButtonSettings() {
+  const formInputHiddenElement = document.getElementById("hmpu-pageurl");
+
+  if (!formInputHiddenElement) {
+    console.warn(
+      "hmpu-Plugin Error: Could not find the form input. Please make sure the form input is set and has the correct ID."
+    );
+    return;
+  }
+
+  const actionButtons = document.querySelectorAll("[data-hmpuformcta]");
+
+  if (actionButtons.length === 0) {
+    console.warn(
+      "hmpu-Plugin Error: Could not find any action buttons. Please make sure the action buttons are set and have the correct attribute."
+    );
+    return;
+  }
+
+  for (let i = 0; i < actionButtons.length; i++) {
+    actionButtons[i].addEventListener("click", function () {
+      formInputHiddenElement.value =
+        "https://happy-mpu.de/mpu-vorbereitung/mpu-berater/" +
+        this.getAttribute("data-hmpuformcta");
+    });
+  }
+}
 
 function renderConsultantTags() {
   const consultantTagElements = document.querySelectorAll(

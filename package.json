@@ -4,7 +4,7 @@
   "description": "This is the repository for hosting the required assets for the Happy-MPU reviews",
   "main": "hmpu-plugin.js",
   "scripts": {
-    "build": "minify src/hmpu-plugin.js > dist/hmpu-plugin.min.js"
+    "build": "minify src/hmpu-plugin.js > dist/hmpu-plugin-${npm_package_version}.min.js"
   },
   "repository": {
     "type": "git",
