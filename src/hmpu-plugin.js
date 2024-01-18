@@ -25,13 +25,21 @@ function inquiryModalPageURLSettings() {
   }
 
   headerCTAButton.addEventListener("click", function () {
-    const formInputHiddenElement = document.getElementById("hmpu_pageurl");
-    formInputHiddenElement.value = window.location.href;
+    const formInputHiddenElementLocal = document.getElementById("hmpu_pageurl");
+
+    if (!formInputHiddenElementLocal) {
+      console.warn(
+        "hmpu-Plugin Error: Could not find the form input. Could not set header action button listener."
+      );
+      return;
+    }
+
+    formInputHiddenElementLocal.value = window.location.href;
   });
 }
 
 function inquiryModalActionButtonSettings() {
-  const formInputHiddenElement = document.getElementById("hmpu-pageurl");
+  const formInputHiddenElement = document.getElementById("hmpu_pageurl");
 
   if (!formInputHiddenElement) {
     console.warn(
@@ -51,8 +59,15 @@ function inquiryModalActionButtonSettings() {
 
   for (let i = 0; i < actionButtons.length; i++) {
     actionButtons[i].addEventListener("click", function () {
-      const formInputHiddenElement = document.getElementById("hmpu-pageurl");
-      formInputHiddenElement.value =
+      const formInputHiddenElementLocal =
+        document.getElementById("hmpu_pageurl");
+      if (!formInputHiddenElementLocal) {
+        console.warn(
+          "hmpu-Plugin Error: Could not find the form input. Could not set action button CTA listeners."
+        );
+        return;
+      }
+      formInputHiddenElementLocal.value =
         "https://happy-mpu.de/mpu-vorbereitung/mpu-berater/" +
         this.getAttribute("data-hmpuformcta");
     });
