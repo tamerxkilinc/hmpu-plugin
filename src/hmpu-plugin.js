@@ -25,6 +25,7 @@ function inquiryModalPageURLSettings() {
   }
 
   headerCTAButton.addEventListener("click", function () {
+    const formInputHiddenElement = document.getElementById("hmpu_pageurl");
     formInputHiddenElement.value = window.location.href;
   });
 }
@@ -50,6 +51,7 @@ function inquiryModalActionButtonSettings() {
 
   for (let i = 0; i < actionButtons.length; i++) {
     actionButtons[i].addEventListener("click", function () {
+      const formInputHiddenElement = document.getElementById("hmpu-pageurl");
       formInputHiddenElement.value =
         "https://happy-mpu.de/mpu-vorbereitung/mpu-berater/" +
         this.getAttribute("data-hmpuformcta");
