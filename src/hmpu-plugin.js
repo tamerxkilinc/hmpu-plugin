@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   renderConsultantTags();
   inquiryModalPageURLSettings();
   inquiryModalActionButtonSettings();
+  openModalByInquiryParam();
 });
 
 function inquiryModalPageURLSettings() {
@@ -151,4 +152,29 @@ function hmpuIframeSettings() {
       iframe.style.minHeight = `${e.data.data.height + 50}px`;
     }
   });
+}
+
+function openModalByInquiryParam() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const inquiryParam = urlParams.get("inquiry");
+
+  if (inquiryParam !== "true") {
+    return;
+  }
+
+  const possibleModals = document.getElementsByClassName(
+    "popup-berater-service"
+  );
+
+  if (possibleModals.length === 0) {
+    console.log(
+      "hmpu-Plugin Error: Could not find any modals although inquiry param is set."
+    );
+    return;
+  }
+
+  const modal = possibleModals[0];
+
+  modal.style.display = "flex";
+  modal.style.opacity = 1;
 }
