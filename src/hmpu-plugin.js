@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   inquiryModalPageURLSettings();
   inquiryModalActionButtonSettings();
   openModalByInquiryParam();
+  openGlobalModalByInquiryParam();
 });
 
 function inquiryModalPageURLSettings() {
@@ -169,6 +170,31 @@ function openModalByInquiryParam() {
   if (possibleModals.length === 0) {
     console.log(
       "hmpu-Plugin Error: Could not find any modals although inquiry param is set."
+    );
+    return;
+  }
+
+  const modal = possibleModals[0];
+
+  modal.style.display = "flex";
+  modal.style.opacity = 1;
+}
+
+function openGlobalModalByInquiryParam() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const inquiryParam = urlParams.get("global-inquiry");
+
+  if (inquiryParam !== "true") {
+    return;
+  }
+
+  const possibleModals = document.getElementsByClassName(
+    "popup-global-service"
+  );
+
+  if (possibleModals.length === 0) {
+    console.log(
+      "hmpu-Plugin Error: Could not find the global modal although global-inquiry param is set."
     );
     return;
   }

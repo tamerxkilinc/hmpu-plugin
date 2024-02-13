@@ -1,6 +1,6 @@
 {
   "name": "hmpu-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This is the repository for hosting the required assets for the Happy-MPU reviews",
   "main": "hmpu-plugin.js",
   "scripts": {
