@@ -70,7 +70,7 @@ function inquiryModalActionButtonSettings() {
         return;
       }
       formInputHiddenElementLocal.value =
-        "https://happy-mpu.de/mpu-vorbereitung/mpu-berater/" +
+        "https://www.happy-mpu.de/mpu-vorbereitung/mpu-berater/" +
         this.getAttribute("data-hmpuformcta");
     });
   }
